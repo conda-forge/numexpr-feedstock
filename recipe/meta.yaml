@@ -31,6 +31,7 @@ requirements:
   host:
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
     - mkl-devel                              # [(linux64 or win64) and mkl_support == 'mkl']
+    - libblas
     - numpy
     - pip
     - python
