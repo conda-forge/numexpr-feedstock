@@ -26,8 +26,8 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}                    # [not win64]
+    - {{ compiler('cxx') }}                  # [not win64]
     - vs2017_win-64                          # [win64]
 
   host:
