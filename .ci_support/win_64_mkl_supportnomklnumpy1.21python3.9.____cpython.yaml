@@ -15,7 +15,7 @@ mkl_devel:
 mkl_support:
 - nomkl
 numpy:
-- '1.20'
+- '1.21'
 pin_run_as_build:
   python:
     min_pin: x.x
