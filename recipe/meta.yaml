@@ -26,6 +26,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
@@ -38,7 +39,6 @@ requirements:
     - libblas * *mkl                         # [(linux64 or win64) and mkl_support == 'mkl']
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
     - nomkl                                  # [(linux64 or win64) and mkl_support != 'mkl']
-    - {{ pin_compatible('numpy') }}
     - python
 
 test:
