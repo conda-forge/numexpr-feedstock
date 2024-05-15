@@ -13,17 +13,20 @@ mkl:
 mkl_devel:
 - '2023'
 mkl_support:
-- mkl
+- nomkl
 numpy:
-- '1.22'
+- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.9.* *_73_pypy
+- 3.10.* *_cpython
+python_impl:
+- cpython
 target_platform:
 - win-64
 zip_keys:
 - - python
   - numpy
+  - python_impl
