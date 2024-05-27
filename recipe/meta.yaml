@@ -1,4 +1,4 @@
-{% set version = "2.9.0" %}
+{% set version = "2.10.0" %}
 {% set build = 0 %}
 {% set build_string = "" %}
 
@@ -11,10 +11,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/numexpr/numexpr-{{ version }}.tar.gz
-  sha256: f21d12f6c432ce349089eb95342babf6629aebb3fddf187a4492d3aadaadaaf0
+  sha256: c89e930752639df040539160326d8f99a84159bbea41943ab8e960591edaaef0
 
 build:
   skip: true  # [py<39]
+  # pypy not participating in numpy2 migration; numexpr not buildable anymore with numpy 1.x
+  skip: true  # [python_impl == "pypy"]
   string: "{{ build_string }}py{{ py }}h{{ PKG_HASH }}_{{ build }}"
   number: {{ build }}
   script: bash {{ RECIPE_DIR }}/build_without_mkl.sh  # [unix and not (linux64 and mkl_support == 'mkl')]
@@ -26,6 +28,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
@@ -38,7 +41,6 @@ requirements:
     - libblas * *mkl                         # [(linux64 or win64) and mkl_support == 'mkl']
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
     - nomkl                                  # [(linux64 or win64) and mkl_support != 'mkl']
-    - {{ pin_compatible('numpy') }}
     - python
 
 test:
