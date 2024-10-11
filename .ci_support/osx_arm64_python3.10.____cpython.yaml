@@ -20,6 +20,8 @@ cxx_compiler_version:
 - '17'
 macos_machine:
 - arm64-apple-darwin20.0.0
+mkl_support:
+- nomkl
 numpy:
 - '2.0'
 pin_run_as_build:
