@@ -26,14 +26,14 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy >=2                              # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
     - mkl-devel                              # [(linux64 or win64) and mkl_support == 'mkl']
-    - numpy >=2.0.0
+    - numpy >=2
     - pip
     - python
     - setuptools
