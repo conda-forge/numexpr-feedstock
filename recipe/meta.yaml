@@ -47,6 +47,10 @@ test:
   imports:
     - numexpr
     - numexpr.interpreter
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/pydata/numexpr
