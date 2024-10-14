@@ -42,6 +42,7 @@ requirements:
     - mkl                                    # [(linux64 or win64) and mkl_support == 'mkl']
     - nomkl                                  # [(linux64 or win64) and mkl_support != 'mkl']
     - python
+    - numpy >=1.23.0
 
 test:
   imports:
