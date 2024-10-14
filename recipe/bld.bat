@@ -7,4 +7,4 @@ if "%mkl_support%" == "mkl" (
   ) > site.cfg
 )
 
-%PYTHON% -m pip install . --no-deps -vv
+%PYTHON% -m pip install . -vv --no-deps --no-build-isolation

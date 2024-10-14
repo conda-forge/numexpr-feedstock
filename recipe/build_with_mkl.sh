@@ -8,4 +8,4 @@ EOF
 echo "#####################"
 echo "site.cfg file written"
 
-$PYTHON -m pip install . --no-deps -vv
+$PYTHON -m pip install . -vv --no-deps --no-build-isolation
