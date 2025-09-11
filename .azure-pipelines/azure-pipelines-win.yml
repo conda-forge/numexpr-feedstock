@@ -20,9 +20,6 @@ jobs:
       win_64_mkl_supportmklpython3.13.____cp313:
         CONFIG: win_64_mkl_supportmklpython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      win_64_mkl_supportmklpython3.9.____cpython:
-        CONFIG: win_64_mkl_supportmklpython3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_mkl_supportnomklpython3.10.____cpython:
         CONFIG: win_64_mkl_supportnomklpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -34,9 +31,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       win_64_mkl_supportnomklpython3.13.____cp313:
         CONFIG: win_64_mkl_supportnomklpython3.13.____cp313
-        UPLOAD_PACKAGES: 'True'
-      win_64_mkl_supportnomklpython3.9.____cpython:
-        CONFIG: win_64_mkl_supportnomklpython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
@@ -51,6 +45,7 @@ jobs:
       displayName: Run Windows build
       env:
         MINIFORGE_HOME: $(MINIFORGE_HOME)
+        CONDA_BLD_PATH: $(CONDA_BLD_PATH)
         PYTHONUNBUFFERED: 1
         CONFIG: $(CONFIG)
         CI: azure
