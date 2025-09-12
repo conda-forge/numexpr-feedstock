@@ -1,4 +1,4 @@
-{% set version = "2.10.2" %}
+{% set version = "2.12.1" %}
 {% set build = 0 %}
 {% set build_string = "" %}
 
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/n/numexpr/numexpr-{{ version }}.tar.gz
-  sha256: b0aff6b48ebc99d2f54f27b5f73a58cb92fde650aeff1b397c71c8788b4fff1a
+  sha256: e239faed0af001d1f1ea02934f7b3bb2bb6711ddb98e7a7bef61be5f45ff54ab
 
 build:
   skip: true  # [py<39]
