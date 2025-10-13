@@ -1,5 +1,5 @@
-{% set version = "2.13.1" %}
-{% set build = 1 %}
+{% set version = "2.14.0" %}
+{% set build = 0 %}
 {% set build_string = "" %}
 
 {% set build_string = "mkl_" %}  # [(linux64 or win64) and mkl_support == 'mkl']
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/n/numexpr/numexpr-{{ version }}.tar.gz
-  sha256: ecb722249c2d6ed7fefe8504bb17e056481a5f31233c23a7ee02085c3d661fa1
+  sha256: a1b59aab62933ace995d7b07bb41231bcf46decffbcfcfc94670ac6d51a46fcf
 
 build:
   skip: true  # [py<39]
