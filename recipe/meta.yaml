@@ -1,5 +1,5 @@
-{% set version = "2.14.1" %}
-{% set build = 2 %}
+{% set version = "2.14.2" %}
+{% set build = 0 %}
 {% set build_string = "" %}
 
 {% set build_string = "mkl_" %}  # [(linux64 or win64) and mkl_support == 'mkl']
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/n/numexpr/numexpr-{{ version }}.tar.gz
-  sha256: 4be00b1086c7b7a5c32e31558122b7b80243fe098579b170967da83f3152b48b
+  sha256: e7144e83ea9e581f2273e0304f15836736c4e470e2bd2e378ce617662a1ca278
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<311]
   # pypy not participating in numpy2 migration; numexpr not buildable anymore with numpy 1.x
   skip: true  # [python_impl == "pypy"]
   string: "{{ build_string }}py{{ py }}h{{ PKG_HASH }}_{{ build }}"
